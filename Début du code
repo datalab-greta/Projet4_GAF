@@ -1,0 +1,14 @@
+
+from flatten_json import flatten
+
+fichier = open("/home/corot/Bureau/5add9d34a0241e2dd800cf34", "r")
+R = fichier.read().strip()
+
+l= eval(R)
+
+import pprint
+pprint.pprint(l)
+
+l["content"]["username"]
+
+f=flatten(l)
