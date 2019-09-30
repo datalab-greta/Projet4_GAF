@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Sep 30 13:22:10 2019
+
+@author: alflo
+"""
+
+from flatten_json import flatten
+import pprint
+from os import listdir
+from os.path import isfile, join
+chemin = '/home/alflo/Bureau/course_v1'
+fichiers = [f for f in listdir(chemin) 
+            if isfile(join(chemin, f))]
+
+
+
+surnom_d={}
+for i in fichiers:    
+  
+    fichier = open("/home/alflo/Bureau/course_v1/{}".format(i), "r")
+    R = fichier.read().strip()
+    l= eval(R)
+    
+    try:
+        s_n=l["content"]['username']
+        surnom_d[i]=s_n    
+        f=flatten(l)
+    except:
+        s_n="None"
+        surnom_d[i]=s_n 
+        
+print(">>>>",surnom_d)    
+
+
+    
