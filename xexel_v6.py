@@ -61,7 +61,7 @@ intervention_nom = collections.Counter(surnom_l).most_common(20)# Compte les 20 
 intervention_nom=intervention_nom[-19:]
 #print(">>>>>>>>>",intervention_nom)
 
-########et un graph en barre########
+########et un graph en barre#########
 
 f, ax1 = plt.subplots(figsize =(10,10))
 plt.bar(*zip(*intervention_nom), width = 0.6, color = 'orange',    edgecolor = 'blue', linewidth = 5)
